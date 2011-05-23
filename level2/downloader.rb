@@ -1,8 +1,8 @@
 #!/usr/local/bin/ruby
 require "open-uri"
 
-
 class Downloader
+  attr_accessor :url, :path
   def initialize(url, path)
     @url = "http://" + url
     @path = path
@@ -24,10 +24,3 @@ class Downloader
   end
 end
 
-
-if ARGV.size == 2
-  @object = Downloader.new(ARGV.first, ARGV.last)
-  @object.exec
-else
-  puts "Invalid arguments"
-end
